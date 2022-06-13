@@ -1,22 +1,13 @@
+const path = require('path') // is a core module with node
 const express = require('express')  // express is a function, not an object
+
+// __dirname  //from root of hard drive to directory
+// path.join(__dirname, '../public')) // use path.join() to point from hardrive to public folder
 
 const app = express()  // we call the function to create the application
 
-app.get('', (req, res) => {
-    res.send('<h1>weather</h1>')
-})   // Configure app to respond to different requests
+app.use(express.static(path.join(__dirname, '../public'))) // express.static ?? configures application
 
-
-app.get('/help', (req, res) => {
-    res.send([{
-        name: 'slim',
-        age: 46
-    }, 36, 'johnny'])
-})
-
-app.get('/about', (req, res) => {
-    res.send('<h1>this is the about page</h1>')
-})
 
 app.get('/weather', (req, res) => {
     res.send({
