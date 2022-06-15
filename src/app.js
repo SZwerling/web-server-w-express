@@ -7,7 +7,7 @@ const express = require('express')  // express is a function, not an object
 const app = express()  // we call the function to create the application
 
 app.use(express.static(path.join(__dirname, '../public'))) // express.static ?? configures application
-
+// public folder is the only one exposed, that' why we put html and css in there.
 
 app.get('/weather', (req, res) => {
     res.send({
