@@ -13,13 +13,13 @@ const app = express()  // we call the function to create the application
 app.use(express.static(path.join(__dirname, '../public'))) // express.static ?? configures application
 // public folder is the only one exposed, that's why we put html and css in there. ^^
 const viewsPath = path.join(__dirname, '../templates/views') //customizing hb so we don't have to use 'view' directory and can put it anywhere
-
+const partialsPath = path.join(__dirname, '../templates/partials')
 
 // These two function calls are specific to handlebars for express -- hbs
 app.set('view engine', 'hbs')  // set a value for a given express.js setting (name, value)
                                // hbs is handlebars for express, to create dynamic templating
 app.set('views', viewsPath)
-
+hbs.registerPartials(partialsPath)  //like app.set, but using hbs
 
 
 app.get('', (req, res) => {
@@ -31,14 +31,16 @@ app.get('', (req, res) => {
 
 app.get('/about', (req, res) => {
     res.render('about', {
-        title: 'Weather Index',
-        name: 'Slimmy'
+        title: 'About',
+        name: 'The About Page'
     })
 })
 
 app.get('/help', (req, res) => {
     res.render('help', {
-        message: 'God helps those who help themselves.'
+        message: 'God helps those who help themselves.',
+        title: 'Help',
+        name: 'Slim'
     })
 })
 
