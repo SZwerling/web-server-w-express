@@ -32,7 +32,7 @@ app.get('', (req, res) => {
 app.get('/about', (req, res) => {
     res.render('about', {
         title: 'About',
-        name: 'The About Page'
+        name: 'Slimmy'
     })
 })
 
@@ -40,7 +40,7 @@ app.get('/help', (req, res) => {
     res.render('help', {
         message: 'God helps those who help themselves.',
         title: 'Help',
-        name: 'Slim'
+        name: 'Slimmy'
     })
 })
 
