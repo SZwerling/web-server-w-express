@@ -1,5 +1,6 @@
 const path = require('path') // is a core module with node
 const express = require('express')  // express is a function, not an object
+const hbs = require('hbs')
 
 // __dirname  //from root of hard drive to directory
 // path.join(__dirname, '../public')) // use path.join() to point from hardrive to public folder
@@ -11,7 +12,7 @@ const app = express()  // we call the function to create the application
 // This sets up static directory to serve
 app.use(express.static(path.join(__dirname, '../public'))) // express.static ?? configures application
 // public folder is the only one exposed, that's why we put html and css in there. ^^
-const viewsPath = path.join(__dirname, '../templates') //customizing hb so we don't have to use 'view' directory and can put it anywhere
+const viewsPath = path.join(__dirname, '../templates/views') //customizing hb so we don't have to use 'view' directory and can put it anywhere
 
 
 // These two function calls are specific to handlebars for express -- hbs
