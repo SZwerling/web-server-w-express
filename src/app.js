@@ -52,8 +52,16 @@ app.get('/weather', (req, res) => {
     })
 })
 
+app.get('/help/*', (req, res) => {
+    res.render('notFound', {
+        message: 'Help Page Not Found'
+    })
+})
+
 app.get('*', (req, res) => {
-    res.send('404 Page')
+    res.render('notFound', {
+        message: 'Page Not Found'
+    })
 })
 
 app.listen(3000, () => {
