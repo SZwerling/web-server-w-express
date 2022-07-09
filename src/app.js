@@ -52,7 +52,7 @@ app.get("/weather", (req, res) => {
       });
    }
 
-   geocode(req.query.address, (error, { latitude, longitude, name }) => {
+   geocode(req.query.address, (error, { latitude, longitude, name } = {}) => { //default function parameter of empty object to be destructured on lat, long and name if incorrect search query used
       if (error) {
          return res.send({ error }); // object prop/val shorthand
       }
