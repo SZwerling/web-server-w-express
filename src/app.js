@@ -10,6 +10,7 @@ const geocode = require("./utils/geocode");
 // path.join(__dirname, '../public')) // use path.join() to point from hardrive to public folder
 
 const app = express(); // we call the function to create the application
+const port = process.env.PORT || 3000
 
 // could also const whatev = path.join(__dirname, '../public') and app.use(express.static(whatev))
 // This sets up static directory to serve
@@ -99,6 +100,6 @@ app.get("*", (req, res) => {
    });
 });
 
-app.listen(3000, () => {
-   console.log("Server is up on port 3000");
+app.listen(port, () => {
+   console.log(`Server is up on port ${port}`);
 });
