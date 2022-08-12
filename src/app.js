@@ -1,3 +1,4 @@
+// app.js
 const path = require("path"); // is a core module with node
 const express = require("express"); // express is a function, not an object
 const hbs = require("hbs");
